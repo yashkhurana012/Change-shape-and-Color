@@ -1,0 +1,166 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shape-change</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+        body{
+            background: black;
+            background-image: url("./download.jpeg");
+            background-size: cover;
+        }
+    section{
+        display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6rem;
+
+    }
+
+        #circle-2{
+            background-color:red;
+            filter: drop-shadow(0px 0px 10px rgb(0, 89, 255));
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        .btn{
+           margin-top: 20px;
+        }
+        button{
+            padding: 12px 19px;
+    font-size: 14px;
+    width: 10rem;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    background: linear-gradient(#FF512F ,#DD2476);
+    
+        }
+        button:hover{
+            cursor: pointer;
+            background: linear-gradient(#f15434 ,#db3b83);
+            filter: drop-shadow(0px 0px 4px rgb(0, 89, 255));
+        }
+        
+
+ #triangle-down {
+    
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-top: 100px solid #fff; 
+    margin-top: 26px;
+    
+  
+             }
+
+    #square {
+  height: 80px;
+  width: 80px;
+  background-color:#fff;
+
+
+}
+#circle {
+  height: 80px;
+  width: 80px;
+    background-color:#fff;
+
+  border-radius: 50%;
+
+}  
+ #cut-diamond {
+      border-style: solid;
+      border-color: transparent transparent #fff  transparent;
+      border-width: 0 25px 25px 25px;
+      height: 0;
+      width: 50px;
+      box-sizing: content-box;
+      position: relative;
+      margin: 0px 0 50px 0;
+    
+    }
+    #cut-diamond:after {
+      content: "";
+      position: absolute;
+      top: 25px;
+      left: -25px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-color: #fff transparent transparent transparent;
+      border-width: 70px 50px 0 50px;
+    }  
+    #pacman {
+       
+       
+      width: 0px;
+      height: 0px;
+      border-right: 50px solid transparent;
+      border-top: 50px solid #fff;
+      border-left: 50px solid #fff;
+      border-bottom: 50px solid #fff;
+      border-top-left-radius: 60px;
+      border-top-right-radius: 60px;
+      border-bottom-left-radius: 60px;
+      border-bottom-right-radius: 60px;
+      
+    }
+   
+   
+    </style>
+</head>
+<body>
+    <section>
+    <div id="circle-2" style="background-color: red;">
+    <div class="shp" id="triangle-down"></div>
+    </div>
+
+    <div class="btn">
+    <button id="colorchng">Change color</button>
+    
+</div>
+<div class="btn">
+    <button id="shape2">Change shape</button>
+</div>
+</section>
+<script>
+    let diffshape=["triangle-down","square","circle","cut-diamond","pacman"];
+    let diffclr=['orange','red','blue','green','black','purple','aqua','blueviolet','greenyellow',"#ddac24"];
+    let shp=document.querySelector(".shp");
+
+    let circle=document.querySelector("#circle-2");
+    let colorchng=document.querySelector("#colorchng");
+    let shape2=document.querySelector("#shape2");
+   
+
+    shape2.addEventListener("click",()=>{
+    let n=Math.floor(Math.random()*diffshape.length);
+    shp.id=diffshape[n];
+    
+    
+    
+  })
+
+    colorchng.addEventListener("click",()=>{
+    let c=Math.floor(Math.random()*diffclr.length);
+    circle.style. backgroundColor=diffclr[c];
+    
+    })
+    </script>
+
+
+
+<container id="my-app-container"></container></body></html>
